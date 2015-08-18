@@ -1,0 +1,7 @@
+I"s(function() {
+  var DemoForAngular;
+
+  DemoForAngular = angular.module('DemoForAngular', []);
+
+}).call(this);
+:ET
