@@ -13,11 +13,21 @@ class UsersController < ApplicationController
   def create
     @user = User.create(visitor_params)
     redirect_to root_path 
+    
   end
 
   def destroy
     respond_with User.destroy(params[:id])
   end
+  def show
+  @user = User.find(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.pdf do
+      render :pdf => "report",:template => "users/show"
+    end 
+  end
+end
 
 private
   def visitor_params
